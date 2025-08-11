@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 50px 0px;
+            background-color: black;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container{
+            height: 400px;
+            width: 500px;
+            border: 2px solid black;
+            font-size: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+  
+        }
+        button{
+            font-size: 20px;
+            font-weight: 700;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Emoji Generator</h1>
+    <div class="container">
+      😁
+    </div>
+    <button onclick="changeEmoji()">Change Emoji</button>
+    <script>
+        let container = document.querySelector('.container');
+      const emojiArray = [
+  "🫶", "✨", "🌈", "🌞", "🌸", "🌼", "🦋", "🍄", "🌟", "💫",
+  "🪄", "🧚", "🧜‍♀", "🧝‍♂", "🎨", "🎠", "🎈", "🪁", "🧸", "🪷",
+  "🏵", "🪻", "🍯", "🍬", "🍰", "🧁", "🎂", "🍓", "🥥", "🌺",
+  "🌿", "🍃", "🪴", "🌵", "🍉", "🍊", "🍍", "🍒", "🥑", "🥭", "🍑",
+  "🥝", "🍋", "🍓", "🌽", "🫐", "🦄", "🐚", "🐝", "🦜", "🦦"
+];
+
+
+        function changeEmoji(){
+            let random = Math.round(Math.random()*emojiArray.length);
+            container.textContent = emojiArray[random]
+        }
+    </script>
+</body>
+</html>
